@@ -201,6 +201,7 @@ impl FeDeExMemWBPC for CPU {
                 self.rA = ((regs & 0xf0) >> 4).into();
                 self.rB = (regs & 0x0f).into();
 
+                self.valP = self.program_counter + 2;
                 self.curr = Y86BLANK::OPQ;
             }
             0x70 => {
